@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UrbanRisk | Municipal Intelligence</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================= -->
+<!-- SIDEBAR -->
+<!-- ========================================================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            U
+        </div>
+
+        <div>
+
+            <h1>
+                UrbanRisk
+            </h1>
+
+            <span>
+                Municipal Intelligence
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <p class="nav-label">
+            OVERVIEW
+        </p>
+
+
+        <a
+            href="#"
+            class="nav-item active"
+        >
+
+            <span class="nav-icon">
+                ▦
+            </span>
+
+            Dashboard
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                ⌖
+            </span>
+
+            Risk Map
+
+        </a>
+
+
+        <p class="nav-label">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="#"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                ⚠
+            </span>
+
+            Interventions
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                ◒
+            </span>
+
+            Analytics
+
+        </a>
+
+
+        <p class="nav-label">
+            SYSTEM
+        </p>
+
+
+        <a
+            href="#"
+            class="nav-item"
+        >
+
+            <span class="nav-icon">
+                ⚙
+            </span>
+
+            Settings
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <div>
+
+                <strong>
+                    System Online
+                </strong>
+
+                <small>
+                    Data synchronized
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ========================================================= -->
+<!-- MAIN -->
+<!-- ========================================================= -->
+
+<main class="main">
+
+
+    <!-- ===================================================== -->
+    <!-- TOP BAR -->
+    <!-- ===================================================== -->
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="breadcrumb">
+                MUNICIPAL COMMAND CENTER
+            </p>
+
+            <h2>
+                Urban Risk Overview
+            </h2>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+
+            <div class="city-selector">
+
+                <span>
+                    City
+                </span>
+
+                <strong>
+                    Pune
+                </strong>
+
+                <span>
+                    ⌄
+                </span>
+
+            </div>
+
+
+            <div class="notification">
+
+                🔔
+
+                <span class="notification-dot"></span>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    M
+                </div>
+
+                <div>
+
+                    <strong>
+                        Municipal Admin
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ===================================================== -->
+    <!-- CONTENT -->
+    <!-- ===================================================== -->
+
+    <section class="content">
+
+
+        <!-- ================================================= -->
+        <!-- PAGE INTRO -->
+        <!-- ================================================= -->
+
+        <div class="page-intro">
+
+            <div>
+
+                <p class="section-label">
+                    LIVE RISK MONITORING
+                </p>
+
+                <h3>
+                    City Risk Intelligence
+                </h3>
+
+                <p class="intro-text">
+                    Monitor predicted flood and accident hotspots
+                    across municipal wards.
+                </p>
+
+            </div>
+
+
+            <div class="last-updated">
+
+                <span class="status-dot"></span>
+
+                Updated just now
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- STAT CARDS -->
+        <!-- ================================================= -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+
+                    <span>
+                        Total Wards
+                    </span>
+
+                    <div class="stat-icon">
+                        ▦
+                    </div>
+
+                </div>
+
+
+                <div class="stat-value">
+                    42
+                </div>
+
+
+                <div class="stat-footer">
+
+                    <span class="positive">
+                        ↑ 3
+                    </span>
+
+                    <span>
+                        monitored zones
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+
+                    <span>
+                        High Risk Zones
+                    </span>
+
+                    <div class="stat-icon warning">
+                        ⚠
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="stat-value"
+                    id="highRiskCount"
+                >
+                    17
+                </div>
+
+
+                <div class="stat-footer">
+
+                    <span class="negative">
+                        ↑ 12%
+                    </span>
+
+                    <span>
+                        from yesterday
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+
+                    <span>
+                        Flood Hotspots
+                    </span>
+
+                    <div class="stat-icon flood">
+                        ≈
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="stat-value"
+                    id="floodHotspotCount"
+                >
+                    8
+                </div>
+
+
+                <div class="stat-footer">
+
+                    <span class="negative">
+                        ↑ 2
+                    </span>
+
+                    <span>
+                        critical zones
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-header">
+
+                    <span>
+                        Accident Hotspots
+                    </span>
+
+                    <div class="stat-icon accident">
+                        ⌁
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="stat-value"
+                    id="accidentHotspotCount"
+                >
+                    5
+                </div>
+
+
+                <div class="stat-footer">
+
+                    <span class="neutral">
+                        → 0%
+                    </span>
+
+                    <span>
+                        change today
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- MAIN GRID -->
+        <!-- ================================================= -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- ================================================= -->
+            <!-- MAP -->
+            <!-- ================================================= -->
+
+            <div class="panel map-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            GEOSPATIAL INTELLIGENCE
+                        </p>
+
+                        <h4>
+                            City Risk Map
+                        </h4>
+
+                    </div>
+
+
+                    <div class="map-controls">
+
+
+                        <button
+                            class="map-filter active"
+                            data-filter="All"
+                        >
+                            All Risks
+                        </button>
+
+
+                        <button
+                            class="map-filter"
+                            data-filter="Flood"
+                        >
+                            Flood
+                        </button>
+
+
+                        <button
+                            class="map-filter"
+                            data-filter="Accident"
+                        >
+                            Accident
+                        </button>
+
+
+                        <select
+                            id="wardFilter"
+                            class="ward-filter"
+                        >
+
+                            <option value="All">
+                                All Wards
+                            </option>
+
+                            <option value="27">
+                                Ward 27
+                            </option>
+
+                            <option value="18">
+                                Ward 18
+                            </option>
+
+                            <option value="31">
+                                Ward 31
+                            </option>
+
+                            <option value="12">
+                                Ward 12
+                            </option>
+
+                            <option value="9">
+                                Ward 9
+                            </option>
+
+                            <option value="5">
+                                Ward 5
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MAP -->
+
+                <div
+                    class="map"
+                    id="riskMap"
+                ></div>
+
+
+
+                <!-- ================================================= -->
+                <!-- ZONE DETAILS -->
+                <!-- ================================================= -->
+
+                <div
+                    class="zone-details"
+                    id="zoneDetails"
+                >
+
+
+                    <div class="zone-details-header">
+
+                        <div>
+
+                            <p class="section-label">
+                                ZONE INTELLIGENCE
+                            </p>
+
+                            <h4 id="zoneTitle">
+                                Zone A12
+                            </h4>
+
+                        </div>
+
+
+                        <button
+                            id="closeZoneDetails"
+                            type="button"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="zone-risk-summary">
+
+                        <div>
+
+                            <span class="detail-label">
+                                RISK SCORE
+                            </span>
+
+                            <div
+                                class="risk-score-large"
+                                id="zoneRisk"
+                            >
+                                91
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="risk-badge critical"
+                            id="zoneSeverity"
+                        >
+                            CRITICAL
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="zone-type"
+                        id="zoneType"
+                    >
+                        Flood Risk · Ward 27
+                    </div>
+
+
+
+                    <!-- CONTRIBUTING FACTORS -->
+
+                    <div class="detail-section">
+
+                        <p class="detail-section-title">
+                            CONTRIBUTING FACTORS
+                        </p>
+
+
+                        <div class="factor">
+
+                            <div class="factor-header">
+
+                                <span>
+                                    Drainage Condition
+                                </span>
+
+                                <strong id="drainageValue">
+                                    92%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="factor-bar">
+
+                                <div
+                                    class="factor-fill"
+                                    id="drainageBar"
+                                    style="width:92%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="factor">
+
+                            <div class="factor-header">
+
+                                <span>
+                                    Rainfall Intensity
+                                </span>
+
+                                <strong id="rainfallValue">
+                                    86%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="factor-bar">
+
+                                <div
+                                    class="factor-fill"
+                                    id="rainfallBar"
+                                    style="width:86%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="factor">
+
+                            <div class="factor-header">
+
+                                <span>
+                                    Historical Incidents
+                                </span>
+
+                                <strong id="historyValue">
+                                    79%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="factor-bar">
+
+                                <div
+                                    class="factor-fill"
+                                    id="historyBar"
+                                    style="width:79%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="factor">
+
+                            <div class="factor-header">
+
+                                <span>
+                                    Citizen Complaints
+                                </span>
+
+                                <strong id="complaintValue">
+                                    72%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="factor-bar">
+
+                                <div
+                                    class="factor-fill"
+                                    id="complaintBar"
+                                    style="width:72%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- RECOMMENDED ACTION -->
+
+                    <div class="detail-section">
+
+                        <p class="detail-section-title">
+                            RECOMMENDED ACTION
+                        </p>
+
+
+                        <div class="recommendation">
+
+                            <div class="recommendation-icon">
+                                ⚒
+                            </div>
+
+
+                            <div>
+
+                                <strong id="recommendationTitle">
+                                    Clean storm drain
+                                </strong>
+
+
+                                <p id="recommendationText">
+                                    Remove accumulated debris and restore
+                                    drainage capacity before the next heavy rainfall.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- IMPACT -->
+
+                    <div class="impact-grid">
+
+
+                        <div class="impact-card">
+
+                            <span>
+                                EST. COST
+                            </span>
+
+                            <strong id="zoneCost">
+                                ₹15,000
+                            </strong>
+
+                        </div>
+
+
+                        <div class="impact-card">
+
+                            <span>
+                                EXPECTED IMPACT
+                            </span>
+
+                            <strong id="zoneImpact">
+                                −31%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SIMULATION -->
+
+                    <div class="simulation-actions">
+
+    <button
+        class="simulate-button"
+        id="simulateButton"
+        type="button"
+    >
+        Simulate Intervention
+        <span>→</span>
+    </button>
+
+    <button
+        class="reset-button"
+        id="resetSimulationButton"
+        type="button"
+    >
+        Reset Simulation
+        <span>↻</span>
+    </button>
+
+</div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- CRITICAL ZONES -->
+            <!-- ================================================= -->
+
+            <div class="panel critical-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            ATTENTION REQUIRED
+                        </p>
+
+                        <h4>
+                            Critical Zones
+                        </h4>
+
+                    </div>
+
+
+                    <button class="view-all">
+                        View all →
+                    </button>
+
+                </div>
+
+
+
+                <div class="zone-list">
+
+
+                    <div class="zone-item">
+
+                        <div class="zone-status critical"></div>
+
+                        <div class="zone-info">
+
+                            <strong>
+                                Zone A12
+                            </strong>
+
+                            <span>
+                                Ward 27 · Flood Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="zone-score">
+
+                            <strong>
+                                91
+                            </strong>
+
+                            <span>
+                                CRITICAL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="zone-item">
+
+                        <div class="zone-status critical"></div>
+
+                        <div class="zone-info">
+
+                            <strong>
+                                Zone B14
+                            </strong>
+
+                            <span>
+                                Ward 18 · Flood Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="zone-score">
+
+                            <strong>
+                                87
+                            </strong>
+
+                            <span>
+                                CRITICAL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="zone-item">
+
+                        <div class="zone-status high"></div>
+
+                        <div class="zone-info">
+
+                            <strong>
+                                Zone C08
+                            </strong>
+
+                            <span>
+                                Ward 31 · Accident Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="zone-score">
+
+                            <strong>
+                                82
+                            </strong>
+
+                            <span>
+                                HIGH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="zone-item">
+
+                        <div class="zone-status high"></div>
+
+                        <div class="zone-info">
+
+                            <strong>
+                                Zone D07
+                            </strong>
+
+                            <span>
+                                Ward 12 · Flood Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="zone-score">
+
+                            <strong>
+                                78
+                            </strong>
+
+                            <span>
+                                HIGH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- PRIORITY INTERVENTIONS -->
+        <!-- ================================================= -->
+
+        <div class="panel interventions-panel">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="section-label">
+                        MUNICIPAL ACTION
+                    </p>
+
+                    <h4>
+                        Priority Interventions
+                    </h4>
+
+                </div>
+
+
+                <button class="view-all">
+                    View interventions →
+                </button>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- IMPORTANT:
+                 JS GENERATES THE ROWS INSIDE THIS CONTAINER.
+                 THERE IS NO SECOND STATIC TABLE.
+            <!-- ================================================= -->
+
+            <div class="intervention-table">
+
+
+                <!-- TABLE HEADER -->
+
+                <div class="table-header">
+
+                    <span>
+                        PRIORITY
+                    </span>
+
+                    <span>
+                        ZONE
+                    </span>
+
+                    <span>
+                        PROBLEM
+                    </span>
+
+                    <span>
+                        RECOMMENDED ACTION
+                    </span>
+
+                    <span>
+                        EST. COST
+                    </span>
+
+                    <span>
+                        IMPACT
+                    </span>
+
+                </div>
+
+
+                <!-- ================================================= -->
+                <!-- JAVASCRIPT FILLS THIS -->
+                <!-- ================================================= -->
+
+                <div id="actionQueue"></div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================================= -->
+<!-- LEAFLET -->
+<!-- ========================================================= -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+
+<!-- ========================================================= -->
+<!-- URBANRISK APP -->
+<!-- ========================================================= -->
+
+<script src="js/session.js"></script>
+<script src="js/ml-risk-engine.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>

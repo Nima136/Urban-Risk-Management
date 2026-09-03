@@ -1,0 +1,127 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 27,
+        "name": "Ward 27",
+        "risk": 91,
+        "type": "Flood"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.850, 18.534],
+          [73.860, 18.534],
+          [73.870, 18.528],
+          [73.860, 18.522],
+          [73.850, 18.528],
+          [73.850, 18.534]
+        ]]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 18,
+        "name": "Ward 18",
+        "risk": 87,
+        "type": "Flood"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.868, 18.520],
+          [73.878, 18.520],
+          [73.878, 18.508],
+          [73.868, 18.508],
+          [73.868, 18.520]
+        ]]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 31,
+        "name": "Ward 31",
+        "risk": 82,
+        "type": "Accident"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.820, 18.542],
+          [73.830, 18.542],
+          [73.830, 18.530],
+          [73.820, 18.530],
+          [73.820, 18.542]
+        ]]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 12,
+        "name": "Ward 12",
+        "risk": 78,
+        "type": "Flood"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.840, 18.510],
+          [73.850, 18.510],
+          [73.850, 18.498],
+          [73.840, 18.498],
+          [73.840, 18.510]
+        ]]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 9,
+        "name": "Ward 9",
+        "risk": 62,
+        "type": "Accident"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.880, 18.550],
+          [73.890, 18.550],
+          [73.890, 18.544],
+          [73.880, 18.544],
+          [73.880, 18.550]
+        ]]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 5,
+        "name": "Ward 5",
+        "risk": 34,
+        "type": "Flood"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.860, 18.500],
+          [73.870, 18.500],
+          [73.870, 18.494],
+          [73.860, 18.494],
+          [73.860, 18.500]
+        ]]
+      }
+    }
+
+  ]
+}
